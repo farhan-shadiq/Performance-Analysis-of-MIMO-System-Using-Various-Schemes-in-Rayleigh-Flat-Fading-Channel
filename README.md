@@ -1,7 +1,7 @@
 # Performance-Analysis-of-MIMO-System-Using-Various-Schemes-in-Rayleigh-Flat-Fading-Channel
-This project analyzes the performance of a MIMO System using MRC, EGC, SC and Alamouti Scheme with BPSK Modulation in Rayleigh Flat Fading Channel.
+## This project analyzes the performance of a MIMO System using MRC, EGC, SC and Alamouti Scheme with BPSK Modulation in Rayleigh Flat Fading Channel.
 
-## Introduction
+### Introduction
 
 Transmitted Message Signal undergoes distortion, fading, shadowing etc. due to the nature of the wireless channel. The received signal SNR is fluctuating in nature due to channel fading. Fading causes performance degradation in wireless communication severely. Diversity techniques are employed to make a wireless communication system robust and reliable even over varying channel conditions. Diversity techniques combat fading and interference by presenting the receiver with multiple uncorrelated copies of the same transmitted signal. Combining techniques are employed at the receiver to exploit multipath propagation characteristics of a channel. MIMO (Multiple Input Multiple Output) systems provide spatial diversity which can be used to resolve the issue of fading. Various techniques such as Maximal Ratio Combining (MRC), Equal Gain Combining (EGC), Selection Combining (SC), Alamouti Scheme etc. are used in MIMO Systems. In this project, we simulated these various techniques in MATLAB and compared there performance under Rayleigh Flat Fading Channel with AWGN noise using BPSK Modulation.
 
@@ -41,17 +41,17 @@ Rayleigh Flat Fading Channel model is used to describe the statistical time vary
 
 Rayleigh Flat Fading Channel with BPSK Modulation was used to simulate MIMO system in this project. Then the performance of MRC, EGC, SC with Tx-1, Rx=2 (L=2) & Tx-1, Rx=4 (L=4), Alamouti 2x1 (L=2) & Alamouti 2x2 (L=4) were analysed by plotting the BER vs SNR graph.
 
-## System
+### System
 
 We performed the simulation using MATLAB. Firstly, 106 bits were generated randomly which would be used as the transmit symbols. SNR range was taken between -15dB to +20dB with an increment of 2dB. The bits were modulated with BPSK and then sent through a Rayleigh Flat Fading Channel. Signal energy was assumed to be equal for each transmission bit. For each SNR, Rayleigh Fading gain was applied and AWGN noise was added to Tx signal to generate the Received Signal. In the receiver side, perfect channel estimation was assumed. We performed the simulation according to the figures shown previously. After bit detection, Bit Error Rate (BER) was calculated by comparing the received bits with the sent ones. Then all the BER’s were plotted against the SNR values. The MATLAB code for this project can be found in [`main.m`](https://github.com/farhan-shadiq/Performance-Analysis-of-MIMO-System-Using-Various-Schemes-in-Rayleigh-Flat-Fading-Channel/blob/main/main.m).
 
-## Result
+### Result
 
 BER vs. SNR plots for different simulations is shown below: 
 
 ![BER vs. SNR plot](https://github.com/farhan-shadiq/Performance-Analysis-of-MIMO-System-Using-Various-Schemes-in-Rayleigh-Flat-Fading-Channel/blob/main/BER%20vs.%20SNR%20plot.jpg)
 
-## Conclusion 
+### Conclusion 
 
 We can see from the BER vs. SNR plot that, the better BER performance for all the systems can be noted down in the following order: 
 
