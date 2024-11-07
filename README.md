@@ -9,10 +9,10 @@ Diversity techniques are employed to make a communication system robust and reli
 
 The MIMO systems can be modeled as follows:
 
-![MIMO System Model](https://lh6.googleusercontent.com/3WJb4wfKMYRr4tW-QsoCYDLM2eBRtEX4TZxHVfmrwy8ntZoz_bxkb2SjhPiXfV4JCeOkHjTG6wAQFvRuhyI0Hotsuvn1S64p5V9NdBn0Z8hWIsg7Lx9-MXi1jd3-YZJYUZrqEUf3QqgH)
+![MIMO System Model](https://github.com/farhan-shadiq/Performance-Analysis-of-MIMO-System-Using-Various-Schemes-in-Rayleigh-Flat-Fading-Channel/blob/main/MIMO%20System%20Model.jpg)
 
 The system configuration typically contains M antennas at the transmitter and N antennas at the receiver front end as illustrated in the figure above. This is a multiple input multiple output (MIMO) channel model. Each receiver antenna receives not only the direct signal intended for it, but also receives a fraction of signal from other propagation paths. Thus, the channel response is expressed as a transmission matrix H. The direct path formed between antenna 1 at the transmitter and the antenna 1 at the receiver is represented by the channel response h11. The channel response of the path formed between antenna 1 in the transmitter and antenna 2 in the receiver is expressed as h21 and so on. Thus, the channel matrix is of dimension N ×M. The received vector y is expressed in terms of the channel transmission matrix H, the input vector x and noise vector n as, y = Hx+n; where the various symbols are,
-
+![Symbols for Channel Transmission Matrix](https://github.com/farhan-shadiq/Performance-Analysis-of-MIMO-System-Using-Various-Schemes-in-Rayleigh-Flat-Fading-Channel/blob/main/Symbols%20for%20Channel%20Transmission%20Matrix.jpg)
 
 For asymmetrical antenna configuration (M 6 = N), the number of data streams (or the number of uncoupled equivalent channels) in the system is always less than or equal to the minimum of the number of transmitter and receiver antennas min(M,N).
 
@@ -20,18 +20,40 @@ In mobile wireless systems, the envelope of the received signal is composed of s
 
 MRC combines all the signals in a co-phased and weighted manner so as to have the highest achievable SNR at the receiver at all times. The following figure shows the working procedure of MRC:
 
-![Working Procedure of MRC](https://lh4.googleusercontent.com/GBgSKlPVUpRKG2Wqe9wcYbhNclJhQSbAsuLSYixk-Bg_H4tOtSGayyJ1xkktjd1dnd-L6vEzBHP_BZfB0NPNulVoZbKUYelK_rOKOR5CQ-fZkYYBPtRp00EaUd26Jkmit_5rTlpPbFa-)
+![Working Procedure of MRC](https://github.com/farhan-shadiq/Performance-Analysis-of-MIMO-System-Using-Various-Schemes-in-Rayleigh-Flat-Fading-Channel/blob/main/Working%20Procedure%20of%20MRC.jpg)
 
 Although, MRC provides the best average SNR at the output, the computational complexity of its implementation is very high.
 
 EGC mitigates this problem by combining all the signals in a co-phased manner with unity weights for all signal levels so as to have the highest achievable SNR at the receiver at all times. This reduces the computational complexity with the trade-off in slightly lower SNR at the receiver side. The following figure shows the working procedure of EGC:
 
+![Working Procedure of EGC](https://github.com/farhan-shadiq/Performance-Analysis-of-MIMO-System-Using-Various-Schemes-in-Rayleigh-Flat-Fading-Channel/blob/main/Working%20Procedure%20of%20EGC.jpg)
+
 In SC technique, the best signal among all the signals received from different branches is selected at the receiver. This is a very simple technique to implement. But the average received SNR is poorer in this case compared to MRC and EGC which becomes significant enough with higher diversity branches.
 
 Alamouti Scheme is a coding technique that does not require any feedback from the receiver nor does it require any bandwidth expansion. The computational complexity is similar to MRC receive diversity technique with one transmit and two receive antennas. The following figure shows its working procedure:
 
-![Alamouti Scheme](https://lh3.googleusercontent.com/xqCeEVlt3ScRybPT6t3WdMJhRCLIpMYUFuRNrOZxUi5g_ot6AAQst51dugKAWQAWgQekZfsCUwvs5Zf4gPmSp2mBEULtyhq-xDgrZYhajwP2deSX0uBzlN7tnElkcnjPW09vCzq3Moql)
+![Alamouti Scheme](https://github.com/farhan-shadiq/Performance-Analysis-of-MIMO-System-Using-Various-Schemes-in-Rayleigh-Flat-Fading-Channel/blob/main/Working%20Procedure%20of%20Alamouti%20Scheme.jpg)
 
 Rayleigh Flat Fading Channel model is used to describe the statistical time varying nature of wireless signal with flat fading when Line-of-Sight (LOS) does not exist. In this channel model, the received voltage envelope provided by the Rayleigh distribution is:
 
+![Rayleigh Distribution](https://github.com/farhan-shadiq/Performance-Analysis-of-MIMO-System-Using-Various-Schemes-in-Rayleigh-Flat-Fading-Channel/blob/main/Rayleigh%20Distribution.jpg)
+
 Rayleigh Flat Fading Channel with BPSK Modulation was used to simulate MIMO system in this project. Then the performance of MRC, EGC, SC with Tx-1, Rx=2 (L=2) & Tx-1, Rx=4 (L=4), Alamouti 2x1 (L=2) & Alamouti 2x2 (L=4) were analysed by plotting the BER vs SNR graph.
+
+## System
+
+We performed the simulation using MATLAB. Firstly, 106 bits were generated randomly which would be used as the transmit symbols. SNR range was taken between -15dB to +20dB with an increment of 2dB. The bits were modulated with BPSK and then sent through a Rayleigh Flat Fading Channel. Signal energy was assumed to be equal for each transmission bit. For each SNR, Rayleigh Fading gain was applied and AWGN noise was added to Tx signal to generate the Received Signal. In the receiver side, perfect channel estimation was assumed. We performed the simulation according to the figures shown previously. After bit detection, Bit Error Rate (BER) was calculated by comparing the received bits with the sent ones. Then all the BER’s were plotted against the SNR values. The MATLAB code for this project can be found in `main.m`.
+
+## Result
+
+BER vs. SNR plots for different simulations is shown below: 
+
+ ![BER vs. SNR plot](https://github.com/farhan-shadiq/Performance-Analysis-of-MIMO-System-Using-Various-Schemes-in-Rayleigh-Flat-Fading-Channel/blob/main/BER%20vs.%20SNR%20plot.jpg)
+
+## Conclusion 
+
+We can see from the BER vs. SNR plot that, the better BER performance for all the systems can be noted down in the following order: 
+
+MRC-1x4 > EGC-1x4 > Alamouti-2x2 ≈ SC-1x4 > MRC-1x2 > EGC-1x2 > SC-1x2 
+
+MRC, EGC-1x4 outperforms Alamouti-2x2 although they have the same diversity L=4 because, same energy for each bit was assumed. The Alamouti-2x2 uses 2 transmit antennas which eventually divides the energy for each signal copy by a factor of 2. As a result, the received SNR for the Alamouti is less compared to MRC and EGC. Same thing happens to MRC, EGC-1x2 and Alamouti-2x1 although they have same diversity of L=2. Alamouti-2x2 and SC-1x4 shows equivalent BER vs SNR performance initially, but as SNR increases, Alamouti outperforms SC. 
