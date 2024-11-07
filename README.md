@@ -12,7 +12,7 @@ The MIMO systems can be modeled as follows:
 ![MIMO System Model](https://lh6.googleusercontent.com/3WJb4wfKMYRr4tW-QsoCYDLM2eBRtEX4TZxHVfmrwy8ntZoz_bxkb2SjhPiXfV4JCeOkHjTG6wAQFvRuhyI0Hotsuvn1S64p5V9NdBn0Z8hWIsg7Lx9-MXi1jd3-YZJYUZrqEUf3QqgH)
 
 The system configuration typically contains M antennas at the transmitter and N antennas at the receiver front end as illustrated in the figure above. This is a multiple input multiple output (MIMO) channel model. Each receiver antenna receives not only the direct signal intended for it, but also receives a fraction of signal from other propagation paths. Thus, the channel response is expressed as a transmission matrix H. The direct path formed between antenna 1 at the transmitter and the antenna 1 at the receiver is represented by the channel response h11. The channel response of the path formed between antenna 1 in the transmitter and antenna 2 in the receiver is expressed as h21 and so on. Thus, the channel matrix is of dimension N ×M. The received vector y is expressed in terms of the channel transmission matrix H, the input vector x and noise vector n as, y = Hx+n; where the various symbols are,
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/2eb40a70-420d-4f8a-8ded-07be50b4a57d/acc3f020-63ad-488a-a362-f5f98f7c028a/image.png)
+
 
 For asymmetrical antenna configuration (M 6 = N), the number of data streams (or the number of uncoupled equivalent channels) in the system is always less than or equal to the minimum of the number of transmitter and receiver antennas min(M,N).
 
